@@ -33,6 +33,10 @@
                         {{-- panggil lewat name href="{{ route('name_routenya') }}" --}}
                         <a class="nav-link {{ Route::is('bucket_list') ? 'active' : '' }}" href="{{ route('bucket_list.data') }}">List</a>
                     </li>
+                    <li class="nav-item">
+                        {{-- panggil lewat name href="{{ route('name_routenya') }}" --}}
+                        <a class="nav-link {{ Route::is('user') ? 'active' : '' }}" href="{{ route('kelola_akun.user') }}">Manage Account</a>
+                    </li>
                 </ul>
             </div>
         </div>

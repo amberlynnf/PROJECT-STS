@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BucketListController;
+use  App\Http\Controllers\UserController;
 
 
 
@@ -38,5 +39,14 @@ Route::prefix('/bucket-list')->name('bucket_list.')->group(function() {
     Route::get('/ubah/{id}', [BucketListController::class, 'edit'])->name('ubah');
     Route::patch('/ubah/{id}/proses', [BucketListController::class, 'update'])->name('ubah.proses');
     Route::delete('/hapus/{id}', [BucketListController::class, 'destroy'])->name('hapus');
+
+});
+Route::prefix('/kelola-akun')->name('kelola_akun.')->group(function() {
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::get('/tambah', [UserController::class, 'create'])->name('tambah');
+    Route::post('/tambah/proses', [UserController::class, 'store'])->name('tambah.proses');
+    Route::get('/ubah/{id}', [UserController::class, 'edit'])->name('ubah');
+    Route::patch('/ubah/{id}/proses', [UserController::class, 'update'])->name('ubah.proses');
+    Route::delete('/hapus/{id}', [UserController::class, 'destroy'])->name('hapus');
 
 });
